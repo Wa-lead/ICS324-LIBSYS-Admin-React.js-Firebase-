@@ -33,15 +33,14 @@ const BookGrid = ({ setSelectedBook, setSelectedImg }) => {
                     alt="green iguana"
                   />
                   <CardContent>
-                    <Typography gutterBottom variant="h5" component="div" >
+                    <Typography gutterBottom variant="h7" component="div" sx={{ pb: 2 }}>
                       {doc.title}
                     </Typography>
-                    <Typography gutterBottom variant="h7" component="div" >
+                    <Typography gutterBottom variant="h8" component="div" sx={{ pb: 1 }}>
                       {doc.author}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000
-                      species, ranging across all continents except Antarctica
+                    Subject: {doc.subject}
                     </Typography>
                   </CardContent>
                 </CardActionArea>

@@ -264,9 +264,30 @@ text-align: center;
 }
 
 .Navbar{
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+
   background-color: #efb6b2;
   display: flex;
   justify-content: center;
   padding: 20px 10px;
   margin-bottom: 20px;
+}
+
+.userCard{
+  box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.192);
+  margin: 2% 20%;
+  border-radius: 20px;
+  background-color: #DEE2E5;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.userCard:hover{
+  background-color: #8d9499;
+}
+
+.delete:hover{
+  border-radius: 20px;
+  background-color: #f5a0a0;
 }

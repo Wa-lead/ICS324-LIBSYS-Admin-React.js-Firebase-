@@ -47,13 +47,13 @@ const UpdateBook = ({ book, setSelectedImg}) => {
 
     return (
         <div className="uploadForm">
-            ISBN: <input type="text" ref={ISBN} />
-            Title: <input type="text" ref={title} />
-            Subject: <input type="text" ref={subject} />
-            Publication Date: <input type="text" ref={pub_date} />
-            Rack Number: <input type="text" ref={rack_num} />
-            Author: <input type="text" ref={author} />
-            <input type="submit" onClick={submitForm} value="Update"/>
+            ISBN: <input type="text" ref={ISBN} defaultValue={book.ISBN}/>
+            Title: <input type="text" ref={title} defaultValue={book.title}/>
+            Subject: <input type="text" ref={subject} defaultValue={book.subject}/>
+            Publication Date: <input type="text" ref={pub_date} defaultValue={book.pub_date}/>
+            Rack Number: <input type="text" ref={rack_num} defaultValue={book.rack_num}/>
+            Author: <input type="text" ref={author} defaultValue={book.author}/>
+            <Button  onClick={submitForm}> Update </Button>
             <Button  onClick={DeleteBook}> Delete Book </Button>
         </div>
 

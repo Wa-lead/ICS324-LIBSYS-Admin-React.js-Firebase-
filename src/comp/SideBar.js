@@ -15,18 +15,18 @@ const SideBar = ({ setView }) => {
 
 
     return (
-        <div>
 
-        <Typography variant="h5" > KFUPM LIBSYS</Typography>
 
         <div className="Navbar">
-            <Stack direction="row" spacing={1}>
+            <Typography variant="h5" sx={{ m: 2 }}> KFUPM LIBSYS</Typography>
+
+            <Stack direction="row" spacing={1} sx={{ m: 2 }}>
                 <Chip label="Books" onClick={() => handleClick("Books")} />
-                     /
+                <Typography variant="h5" > /</Typography>
+
                 <Chip label="Users"  onClick={() => handleClick("Users")} />
             </Stack>
 
-        </div>
         </div>
 
 
