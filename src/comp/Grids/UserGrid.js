@@ -11,7 +11,9 @@ import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { Typography } from '@mui/material';
 const UserGrid = ({ student }) => {
 
-    const { docs } = useFirestore('Student')
+     const students = "Student"
+
+    const { docs } = useFirestore(students)
 
 
     const deleteStudent = (doc) => {

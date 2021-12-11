@@ -22,9 +22,9 @@ const SideBar = ({ setView }) => {
             <div>
             <Typography variant="h3" sx={{ m: 2 }}> Welcome to KFUPM LIBSYS, Librarian View</Typography>
 
-            <Stack direction="row" spacing={1} sx={{ m: 2 }}>
+            <Stack direction="column" spacing={1} sx={{ m: 2 }}>
                 <Chip label="Books" onClick={() => handleClick("Books")} />
-                <Typography variant="h5" > /</Typography>
+                {/* <Typography variant="h5" > /</Typography> */}
 
                 <Chip label="Users"  onClick={() => handleClick("Users")} />
             </Stack>

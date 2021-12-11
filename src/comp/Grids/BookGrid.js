@@ -20,7 +20,7 @@ const BookGrid = ({ setSelectedBook, setSelectedImg }) => {
 
 
       <div className="grid">
-      <Typography variant="h2" sx={{ mb:3, mt: 3, fontWeight: 900}}> Avaliable books</Typography>
+      <Typography variant="h2" sx={{ mb:3, mt: 3, fontWeight: 900}}> Available books</Typography>
 
         <ImageList sx={{ height: 1000 }} cols={3} rowHeight={300}>
           {docs && docs.map(doc => (

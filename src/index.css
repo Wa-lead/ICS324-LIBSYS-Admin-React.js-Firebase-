@@ -318,17 +318,18 @@ label input {
   justify-content: space-between;
 }
 
-input[type="text"] {
-  
+input[type="text"]:focus {
+  background-color: rgb(223, 233, 238);
+  transition: 0.3s;
 }
 
 .pageContainer{
   display: flex;
   flex-direction: row;
+  
 }
 
 .Navbar {
-  background-color: #efb6b2;
   display: flex;
   flex-direction: column;
   justify-content:center;
@@ -337,9 +338,21 @@ input[type="text"] {
   margin-bottom: 20px;
   background: linear-gradient(113.49deg, #ff7b00 -30.3%, #f8c1a8 58.12%);
   max-width: 400px;
-  min-height: 100%;
-  position: sticky;
-  top: 0;
+  transition: 0.3s;
+  opacity: 0.05;
+  border-top-right-radius: 1000px;
+  border-bottom-right-radius: 1000px;
+  position: fixed;
+  height: 100%;
+  z-index: 1;
+  
+}
+
+.Navbar:hover{
+  opacity: 1;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
 }
 
 .Navbar .div{
@@ -355,14 +368,7 @@ input[type="text"] {
 
 }
 
-.sideBar{
-  border: #181E41 solid;
-}
 
-
-.dd{
-  flex: 1;
-}
 
 .ss{
   flex:3;

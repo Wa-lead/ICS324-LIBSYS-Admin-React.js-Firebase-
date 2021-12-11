@@ -43,7 +43,7 @@ const UploadForm = ({ setSelectedBook }) => {
     return (
         <div className="uploadForm">
             <Typography variant="h2" sx={{ mb:3, mt: 3, fontWeight: 900 }}> Fill book information</Typography>
-
+            
             <input type="file" ref={fileRef} />
             ISBN: <input type="text" ref={ISBN} />
             Title: <input type="text" ref={title} />
