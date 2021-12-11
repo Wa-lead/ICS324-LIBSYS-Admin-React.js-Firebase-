@@ -13,20 +13,24 @@ function App() {
 
   return (
     <div >
-      <SideBar setView={setView}/>
-      {view=="Books"&&
-      <BookGrid setSelectedBook={setSelectedBook} setSelectedImg={setSelectedImg} />
-  }
-      {view=="Users"&&
-      <UserGrid/>
-    }
+      <div className='pageContainer'>
+          <SideBar className="dd" setView={setView} />
+        <div className='ss'>
+          {view == "Books" &&
+            <BookGrid setSelectedBook={setSelectedBook} setSelectedImg={setSelectedImg} />
+          }
+          {view == "Users" &&
+            <UserGrid />
+          }
 
-{ selectedImg &&
-    <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg}/>
-}
+          {selectedImg &&
+            <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+          }
 
+        </div >
+
+      </div>
     </div >
-
   )
 }
 

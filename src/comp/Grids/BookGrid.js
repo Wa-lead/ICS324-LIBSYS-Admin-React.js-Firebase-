@@ -20,7 +20,9 @@ const BookGrid = ({ setSelectedBook, setSelectedImg }) => {
 
 
       <div className="grid">
-        <ImageList sx={{ width: 1000, height: 1000 }} cols={4} rowHeight={300}>
+      <Typography variant="h2" sx={{ mb:3, mt: 3, fontWeight: 900}}> Avaliable books</Typography>
+
+        <ImageList sx={{ height: 1000 }} cols={3} rowHeight={300}>
           {docs && docs.map(doc => (
             <ImageListItem>
               <Card style={{ backgroundColor: "#DEE2E5" }}

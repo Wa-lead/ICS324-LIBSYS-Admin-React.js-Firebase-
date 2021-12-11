@@ -1,4 +1,5 @@
 
+import { Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useRef } from "react";
 import Student from "../../Classes/Student";
@@ -38,10 +39,13 @@ const UploadStudent = () => {
 
     return (
         <div className="uploadForm">
+            <Typography variant="h2" sx={{ mb:3, mt: 3, fontWeight: 900 }}> Fill the required fields </Typography>
             SSN:<input type="text" ref={SSN} />
+            {/* <div className="flexBox"> */}
             Fname: <input type="text" ref={Fname} />
             Minit: <input type="text" ref={Minit} />
             Lname: <input type="text" ref={Lname} />
+            {/* </div> */}
             Birthdate: <input type="text" ref={Birthdate} />
             Major: <input type="text" ref={Major} />
             <input type="submit" onClick={submitForm} />

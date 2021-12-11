@@ -11,7 +11,7 @@ import deleteBook from "../../functions/deleteBook";
 
 
 
-const UpdateBook = ({ book, setSelectedImg}) => {
+const UpdateBook = ({ book, setSelectedImg }) => {
 
 
     const ISBN = useRef(null);
@@ -40,21 +40,22 @@ const UpdateBook = ({ book, setSelectedImg}) => {
     }
 
 
-    const DeleteBook = () =>{
+    const DeleteBook = () => {
         deleteBook(book.id)
         setSelectedImg(null);
     }
 
     return (
         <div className="uploadForm">
-            ISBN: <input type="text" ref={ISBN} defaultValue={book.ISBN}/>
-            Title: <input type="text" ref={title} defaultValue={book.title}/>
-            Subject: <input type="text" ref={subject} defaultValue={book.subject}/>
-            Publication Date: <input type="text" ref={pub_date} defaultValue={book.pub_date}/>
-            Rack Number: <input type="text" ref={rack_num} defaultValue={book.rack_num}/>
-            Author: <input type="text" ref={author} defaultValue={book.author}/>
-            <Button  onClick={submitForm}> Update </Button>
-            <Button  onClick={DeleteBook}> Delete Book </Button>
+            <Button onClick={DeleteBook}> Delete Book </Button>
+
+            ISBN: <input type="text" ref={ISBN} defaultValue={book.ISBN} />
+            Title: <input type="text" ref={title} defaultValue={book.title} />
+            Subject: <input type="text" ref={subject} defaultValue={book.subject} />
+            Publication Date: <input type="text" ref={pub_date} defaultValue={book.pub_date} />
+            Rack Number: <input type="text" ref={rack_num} defaultValue={book.rack_num} />
+            Author: <input type="text" ref={author} defaultValue={book.author} />
+            <Button onClick={submitForm}> Update </Button>
         </div>
 
 

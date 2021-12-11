@@ -4,6 +4,7 @@ import * as React from 'react';
 import Chip from '@mui/material/Chip';
 import { Button, Typography } from '@mui/material';
 import Stack from '@mui/material/Stack';
+import image from './heroimage.png';
 
 
 
@@ -18,7 +19,8 @@ const SideBar = ({ setView }) => {
 
 
         <div className="Navbar">
-            <Typography variant="h4" sx={{ m: 2 }}> KFUPM LIBSYS</Typography>
+            <div>
+            <Typography variant="h3" sx={{ m: 2 }}> Welcome to KFUPM LIBSYS, Librarian View</Typography>
 
             <Stack direction="row" spacing={1} sx={{ m: 2 }}>
                 <Chip label="Books" onClick={() => handleClick("Books")} />
@@ -26,7 +28,7 @@ const SideBar = ({ setView }) => {
 
                 <Chip label="Users"  onClick={() => handleClick("Users")} />
             </Stack>
-
+            </div>
         </div>
 
 
