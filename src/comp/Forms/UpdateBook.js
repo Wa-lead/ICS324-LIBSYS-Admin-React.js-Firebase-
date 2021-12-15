@@ -20,6 +20,8 @@ const UpdateBook = ({ book, setSelectedImg }) => {
     const pub_date = useRef(null);
     const rack_num = useRef(null);
     const author = useRef(null);
+    const copies = useRef(null);
+
 
 
     const submitForm = () => {
@@ -32,6 +34,7 @@ const UpdateBook = ({ book, setSelectedImg }) => {
             pub_date.current.value,
             rack_num.current.value,
             author.current.value,
+            copies.current.value
         );
 
         setSelectedImg(null);
@@ -55,6 +58,8 @@ const UpdateBook = ({ book, setSelectedImg }) => {
             Publication Date: <input type="text" ref={pub_date} defaultValue={book.pub_date} />
             Rack Number: <input type="text" ref={rack_num} defaultValue={book.rack_num} />
             Author: <input type="text" ref={author} defaultValue={book.author} />
+            Copies Available: <input type="text" ref={copies} defaultValue={book.copies}/>
+
             <Button onClick={submitForm}> Update </Button>
         </div>
 

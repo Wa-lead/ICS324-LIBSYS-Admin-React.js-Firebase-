@@ -21,6 +21,7 @@ const UploadForm = ({ setSelectedBook }) => {
     const pub_date = useRef(null);
     const rack_num = useRef(null);
     const author = useRef(null);
+    const copies = useRef(null);
 
 
     const submitForm = (type) => {
@@ -51,6 +52,7 @@ const UploadForm = ({ setSelectedBook }) => {
             Publication Date: <input type="text" ref={pub_date} />
             Rack Number: <input type="text" ref={rack_num} />
             Author: <input type="text" ref={author} />
+            Copies Available: <input type="text" ref={copies} />
             <input type="submit" onClick={submitForm} />
 
             {book &&
