@@ -342,7 +342,7 @@ input[type="text"]:focus {
   opacity: 0.05;
   border-top-right-radius: 1000px;
   border-bottom-right-radius: 1000px;
-  position: fixed;
+  position: sticky;
   height: 100%;
   z-index: 1;
   

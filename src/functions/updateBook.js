@@ -10,7 +10,7 @@ import {
 } from '../firebase/config';
 
 
-const updateBook = (id, ISBN, title, subject, pub_date, rack_num, author) => {
+const updateBook = (id, ISBN, title, subject, pub_date, rack_num, author, copies) => {
     const collectionRef = collection(projectFirestore, 'Book');
     updateDoc(doc(collectionRef, id), {
         ISBN: ISBN,
@@ -19,6 +19,7 @@ const updateBook = (id, ISBN, title, subject, pub_date, rack_num, author) => {
         pub_date: pub_date,
         rack_num: rack_num,
         author: author,
+        copies: copies,
     })
 
 }
