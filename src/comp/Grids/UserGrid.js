@@ -1,5 +1,4 @@
 
-import useFirestore from '../../hooks/useFirestore';
 import deleteUser from '../../hooks/deleteStudent';
 
 import React, { useRef } from 'react';
@@ -9,11 +8,14 @@ import UploadStudent from '../Forms/UploadStudent';
 import PersonIcon from '@mui/icons-material/Person';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { Typography } from '@mui/material';
+import useFirestore from '../../hooks/useFirestore';
+
 const UserGrid = ({ student }) => {
 
      const students = "Student"
 
     const { docs } = useFirestore(students)
+    
 
 
     const deleteStudent = (doc) => {
