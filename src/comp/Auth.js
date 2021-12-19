@@ -14,10 +14,10 @@ const Auth = ({ setAuth }) => {
     const passRef = React.useRef(null)
 
 
-    const authenticate = (user, pass) => {
-        let logged = authenticateAdmin(user, pass)
+    const authenticate = async (user, pass) => {
+        let logged = await authenticateAdmin(user, pass)
 
-        if (logged) {
+        if (logged==true) {
             setAuth('yes');
         }
 
@@ -26,9 +26,9 @@ const Auth = ({ setAuth }) => {
 
     return (
 
-
         <div>
-            <Typography variant="h3" sx={{ m: 2 }}> Welcome to KFUPM LIBSYS, Librarian View</Typography>
+        <div className='AuthView'>
+            <Typography variant="h2" sx={{ m: 2 }}> Welcome to KFUPM LIBSYS</Typography>
 
             <Stack direction="column" spacing={1} sx={{ m: 2 }}>
                 Username: <input type="text"  ref={userRef}/>
@@ -37,7 +37,7 @@ const Auth = ({ setAuth }) => {
 
             </Stack>
         </div>
-
+        </div>
     )
 }
 

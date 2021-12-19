@@ -19,25 +19,26 @@ import {
 
 
 
-const useUploadStudent = (student) => {
+const useUploadUser = (User) => {
     
     console.log("ddfs")
 
     useEffect(() => {
         // refreneces
-        const collectionRef = collection(projectFirestore, 'Student');
+        const collectionRef = collection(projectFirestore, 'User');
 
         addDoc(collectionRef, {
-            SSN: student.SSN,
-            Fname: student.Fname,
-            Minit:student.Minit,
-            Lname: student.Lname,
-            Birthdate: student.Birthdate,
-            Major: student.Major,
+            SSN: User.SSN,
+            Fname: User.Fname,
+            Minit:User.Minit,
+            Lname: User.Lname,
+            Birthdate: User.Birthdate,
+            Department: User.Department,
+            Role: User.Role,
             createdAt: serverTimestamp(),
         });
 
-    }, [student]);
+    }, [User]);
 }
 
-export default useUploadStudent;
+export default useUploadUser;

@@ -11,7 +11,7 @@ import {
 
 
 const deleteUser = (SSN) => {
-    const collectionRef = collection(projectFirestore, 'Student');
+    const collectionRef = collection(projectFirestore, 'User');
     deleteDoc(doc(collectionRef, SSN))
 
 }

@@ -2,16 +2,16 @@
 import { Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useRef } from "react";
-import Student from "../../Classes/Student";
-import ProgressBar2 from "./../ProgressBars/ProgressBar2";
+import User from "../../Classes/User";
+import ProgressBar2 from "../ProgressBars/ProgressBar2";
 
 
 
 
 
-const UploadStudent = () => {
+const UploadUser = () => {
 
-    const [student, setStudent] = useState(null);
+    const [user, setUser] = useState(null);
 
 
     const SSN = useRef(null);
@@ -19,19 +19,24 @@ const UploadStudent = () => {
     const Minit = useRef(null);
     const Lname = useRef(null);
     const Birthdate = useRef(null);
-    const Major = useRef(null);
+    const Department = useRef(null);
+    const Role = useRef(null);
+
+
 
 
     const submitForm = () => {
 
 
-        setStudent(new Student(
+        setUser(
+            new User(
             SSN.current.value,
             Fname.current.value,
             Minit.current.value,
             Lname.current.value,
             Birthdate.current.value,
-            Major.current.value,
+            Department.current.value,
+            Role.current.value
         ));
 
 
@@ -46,12 +51,13 @@ const UploadStudent = () => {
             Minit: <input type="text" ref={Minit} />
             Lname: <input type="text" ref={Lname} />
             {/* </div> */}
-            Birthdate: <input type="text" ref={Birthdate} />
-            Major: <input type="text" ref={Major} />
+            Birthdate: <input type="date" ref={Birthdate} />
+            Department: <input type="text" ref={Department} />
+            Role: <input type="text" ref={Role} />
             <input type="submit" onClick={submitForm} />
 
-            {student &&
-                <ProgressBar2 student={student} setSelectedStudent={setStudent}/>
+            {user &&
+                <ProgressBar2 User={user} setSelectedUser={setUser}/>
             }
 
         </div>
@@ -61,4 +67,4 @@ const UploadStudent = () => {
 }
 
 
-export default UploadStudent;
+export default UploadUser;

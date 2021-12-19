@@ -34,6 +34,7 @@ const UploadForm = ({ setSelectedBook }) => {
             rack_num.current.value,
             author.current.value,
             fileRef.current.files[0],
+            copies.current.value,
         ));
 
         setSelectedBook(book);

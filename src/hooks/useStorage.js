@@ -30,7 +30,6 @@ const useUploadBook = (book) => {
         // refreneces
         const storageRef = ref(projectStorage, book.file.name);
         const collectionRef = collection(projectFirestore, 'Book');
-        console.log("ss")
 
         const uploadTask = uploadBytesResumable(storageRef, book.file);
         uploadTask.on('state_changed',
@@ -48,6 +47,7 @@ const useUploadBook = (book) => {
                     pub_date: book.pub_date,
                     rack_num: book.rack_num,
                     author: book.author,
+                    copies: book.copies,
                     imageURL: url,
                     createdAt: serverTimestamp(),
                 });
@@ -64,3 +64,5 @@ const useUploadBook = (book) => {
 }
 
 export default useUploadBook;
+
+

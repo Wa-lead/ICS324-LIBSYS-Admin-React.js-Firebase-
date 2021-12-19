@@ -25,14 +25,13 @@ const BookGrid = ({ setSelectedBook, setSelectedImg }) => {
         <ImageList sx={{ height: 1000 }} cols={3} rowHeight={300}>
           {docs && docs.map(doc => (
             <ImageListItem>
-              <Card style={doc.copies >= 1 ? { backgroundColor: "#DEE2E5" }: { backgroundColor: "red" }}
+              <Card style={doc.copies >= 1 ? { backgroundColor: "#DEE2E5" }: { backgroundColor: "#F4C6BA" }}
                 sx={{ maxWidth: 200 }} onClick={() => setSelectedImg(doc)}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
                     height="140"
                     image={doc.imageURL}
-                    alt="green iguana"
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h7" component="div" sx={{ pb: 2 }}>

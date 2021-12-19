@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import useUploadStudent from "../../hooks/useUploadStudent"
+import useUploadUser from "../../hooks/useUploadUser"
 
 
 
-const ProgressBar2 = ({student, setSelectedStudent}) =>{
+const ProgressBar2 = ({User, setSelectedUser}) =>{
 
-    useUploadStudent(student);
+    useUploadUser(User);
 
 
     return(

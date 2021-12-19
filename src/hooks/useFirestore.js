@@ -43,3 +43,4 @@ const useFirestore = (Collection) => {
 }
 
 export default useFirestore;
+

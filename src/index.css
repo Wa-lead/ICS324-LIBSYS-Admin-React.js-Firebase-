@@ -372,3 +372,16 @@ input[type="text"]:focus {
 .ss{
   flex:3;
 }
+
+.AuthView{
+  padding: 30% 30%;
+  background: linear-gradient(113.49deg, #ff7b00 -30.3%, #f8c1a8 58.12%);
+
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}

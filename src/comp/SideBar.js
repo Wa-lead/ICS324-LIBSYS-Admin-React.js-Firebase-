@@ -25,8 +25,9 @@ const SideBar = ({ setView }) => {
             <Stack direction="column" spacing={1} sx={{ m: 2 }}>
                 <Chip label="Books" onClick={() => handleClick("Books")} />
                 {/* <Typography variant="h5" > /</Typography> */}
-
                 <Chip label="Users"  onClick={() => handleClick("Users")} />
+                <Chip label="Reports"  onClick={() => handleClick("Reports")} />
+
             </Stack>
             </div>
         </div>
