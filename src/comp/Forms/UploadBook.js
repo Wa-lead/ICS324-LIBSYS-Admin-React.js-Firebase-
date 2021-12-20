@@ -50,7 +50,7 @@ const UploadForm = ({ setSelectedBook }) => {
             ISBN: <input type="text" ref={ISBN} />
             Title: <input type="text" ref={title} />
             Subject: <input type="text" ref={subject} />
-            Publication Date: <input type="text" ref={pub_date} />
+            Publication Date:<input type="date" ref={pub_date} />
             Rack Number: <input type="text" ref={rack_num} />
             Author: <input type="text" ref={author} />
             Copies Available: <input type="text" ref={copies} />

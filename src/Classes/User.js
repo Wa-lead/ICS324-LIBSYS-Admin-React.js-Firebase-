@@ -1,6 +1,7 @@
 export default class User {
-    constructor(SSN, Fname, Minit, Lname, Birthdate, Department, Role) {
+    constructor(SSN, Fname, Minit, Lname, Birthdate, Department, Role, Password) {
         this.SSN= SSN;
+        this.Password = Password;
         this.Fname= Fname;
         this.Lname=Lname;
         this.Minit= Minit;

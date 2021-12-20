@@ -22,6 +22,12 @@ const updateBook = (id, ISBN, title, subject, pub_date, rack_num, author, copies
         copies: copies,
     })
 
+    sendemail();
+
 }
 
 export default updateBook;
+
+function sendemail(){
+    fetch('http://localhost:8080/sendEmail')
+}

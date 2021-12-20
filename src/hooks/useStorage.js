@@ -15,6 +15,8 @@ import {
     collection,
     serverTimestamp,
     addDoc,
+    setDoc,
+    doc,
 } from 'firebase/firestore';
 
 
@@ -40,14 +42,15 @@ const useUploadBook = (book) => {
             }, async () => {
                 const url = await getDownloadURL(storageRef);
 
-                addDoc(collectionRef, {
+                const docRef = doc(collectionRef,book.ISBN)
+                setDoc(docRef, {
                     ISBN: book.ISBN,
                     title: book.title,
                     subject:book.subject,
                     pub_date: book.pub_date,
                     rack_num: book.rack_num,
                     author: book.author,
-                    copies: book.copies,
+                    copies: parseInt(book.copies),
                     imageURL: url,
                     createdAt: serverTimestamp(),
                 });

@@ -25,18 +25,18 @@ const useReport3 = (Collection) => {
         //orderBy(colRef,'createdAt','desc');
         const unsubscribe = onSnapshot(colRef, async () => {
 
-            let Images = [];
+            let users = [];
             const documents = await getDocs(colRef);
             documents.forEach(async (document) => {
-                Images.push(document.id);
+                users.push(document.id);
             });
             // first set
 
             const resRef = collection(projectFirestore, 'Reservation');
             let arrayOfusers =[]
 
-            for (var i =0 ; i< Images.length; i++){
-                const w = query(resRef, where("Borrower", "==", Images[i]));
+            for (var i =0 ; i< users.length; i++){
+                const w = query(resRef, where("Borrower", "==", users[i]));
                 const q = await getDocs(w);
                 let o =[];
                 q.forEach((document) => {
@@ -61,8 +61,6 @@ const useReport3 = (Collection) => {
                 arrayToDisplay.push(docSnap.data());
             }
 
-
-            
                 setDocs(arrayToDisplay);
 
         });

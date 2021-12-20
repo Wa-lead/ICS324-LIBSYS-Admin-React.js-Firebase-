@@ -6,12 +6,15 @@ import Modal from './comp/Modal'
 import UserGrid from './comp/Grids/UserGrid';
 import Auth from './comp/Auth';
 import ReportGrid from './comp/Grids/ReportGrid';
+import BorrowGrid from './comp/Grids/BorrowGrid';
+import ModalBorrow from './comp/ModalBorrow';
+
 
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
   const [book, setSelectedBook] = useState(null);
   const [view, setView] = useState("Books")
-  const [auth, setAuth] = useState('yes')
+  const [auth, setAuth] = useState('no')
 
 
 
@@ -38,9 +41,17 @@ function App() {
                 <ReportGrid />
               }
 
-              {selectedImg &&
+              {view == "Borrow" &&
+                <BorrowGrid setSelectedBook={setSelectedBook} setSelectedImg={setSelectedImg} />}
+
+              {(selectedImg && view == 'Books') &&
                 <Modal selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
               }
+
+              {(selectedImg && view == 'Borrow') &&
+                <ModalBorrow selectedImg={selectedImg} setSelectedImg={setSelectedImg} />
+              }
+
 
             </div >
 

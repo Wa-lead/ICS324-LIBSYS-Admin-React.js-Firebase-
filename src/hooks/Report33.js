@@ -5,6 +5,7 @@ import {
     query,
     getDocs, getDoc, where, doc
 } from '@firebase/firestore';
+import userEvent from '@testing-library/user-event';
 import {
     useState,
     useEffect
@@ -14,41 +15,40 @@ import {
 } from '../firebase/config';
 
 
-const useReport1 = (Collection) => {
+const useReport33 = (Collection) => {
     const [docs, setDocs] = useState([]);
 
 
     useEffect(() => {
 
         const colRef = collection(projectFirestore, 'Borrows');
+        //orderBy(colRef,'createdAt','desc');
         const unsubscribe = onSnapshot(colRef, async () => {
-            const resUsers = [];
-            const documents = await getDocs(colRef);
-            documents.forEach(async (document) => {
-                resUsers.push(document.data());
-            });
+
+
+            let arrayOfusers =[];
 
             const documentOfUsers = []
-
             const w = collection(projectFirestore, 'User');
             let q = await getDocs(w);
             q.forEach((doc) => {
                 documentOfUsers.push(doc.data())
             });
 
-            const arrayOfUsers = [];
-
-            for (var i = 0; i < documentOfUsers.length; i++) {
+            for (var i =0 ; i< documentOfUsers.length; i++){
                 const w = query(colRef, where("SSN", "==", documentOfUsers[i].SSN));
                 const q = await getDocs(w);
-                console.log(q.docs.length);
-                if(!q.docs.length >0){
-                    arrayOfUsers.push(documentOfUsers[i]);
+                let o =[];
+                q.forEach((document) => {
+                    o.push(document.data());
+                });
+                if(o.length>= 3){
+                    arrayOfusers.push(documentOfUsers[i]);
                 }
             }
+            
+            setDocs(arrayOfusers);
 
-
-            setDocs(arrayOfUsers);
         });
 
         return () => unsubscribe();
@@ -59,4 +59,10 @@ const useReport1 = (Collection) => {
     }
 }
 
-export default useReport1;
+export default useReport33;
+
+
+
+// for (const key in userID) {
+//     "reservation".limit=3,where(borrwer.userID).get().size=>3;
+// }

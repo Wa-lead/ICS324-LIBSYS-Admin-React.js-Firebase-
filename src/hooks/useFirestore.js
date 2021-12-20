@@ -33,6 +33,7 @@ const useFirestore = (Collection) => {
             });
             setDocs(Images);
         });
+        console.log(docs);
 
         return () => unsubscribe();
 

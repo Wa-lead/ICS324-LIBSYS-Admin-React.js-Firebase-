@@ -1,44 +1,100 @@
 import * as React from 'react';
-
-
-import Chip from '@mui/material/Chip';
-import { Button, Typography } from '@mui/material';
-import Stack from '@mui/material/Stack';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import authenticateAdmin from '../functions/authenticateAdmin';
 
-
-
-const Auth = ({ setAuth }) => {
-
-    const userRef = React.useRef(null);
-    const passRef = React.useRef(null)
-
-
-    const authenticate = async (user, pass) => {
-        let logged = await authenticateAdmin(user, pass)
-
-        if (logged==true) {
-            setAuth('yes');
-        }
-
-    }
-
-
+function Copyright(props) {
     return (
-
-        <div>
-        <div className='AuthView'>
-            <Typography variant="h2" sx={{ m: 2 }}> Welcome to KFUPM LIBSYS</Typography>
-
-            <Stack direction="column" spacing={1} sx={{ m: 2 }}>
-                Username: <input type="text"  ref={userRef}/>
-                Passowrd: <input type="text"  ref={passRef}/>
-                 <input type="submit" onClick={()=>authenticate(userRef.current.value, passRef.current.value)} />
-
-            </Stack>
-        </div>
-        </div>
-    )
+        <Typography variant="body2" color="text.secondary" align="center" {...props}>
+            {'Copyright © '}
+            <Link color="inherit" href="https://mui.com/">
+                Your Website
+            </Link>{' '}
+            {new Date().getFullYear()}
+            {'.'}
+        </Typography>
+    );
 }
 
-export default Auth;
+const theme = createTheme();
+
+export default function Auth({ setAuth }) {
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        // eslint-disable-next-line no-console
+        let logged = await authenticateAdmin(data.get('email'), data.get('password'));
+        if (logged == true) {
+            setAuth('yes');
+        };
+    };
+
+    return (
+        <div>
+            <div className='AuthView'>
+                <Typography variant="h3" style={{ color: "white"  }} align='center' sx={{ mb: 3, mt: 3, fontWeight: 900 }}> Welcome to LIBSYS </Typography>
+
+                <ThemeProvider theme={theme}>
+
+                    <Container component="main" maxWidth="xs">
+                        <CssBaseline />
+                        <Box
+                            sx={{
+                                marginTop: 8,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                            }}
+                        >
+
+                            <Typography component="h1" variant="h5">
+                                Sign in
+                            </Typography>
+                            <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                                <TextField
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    id="email"
+                                    label="Admin User"
+                                    name="email"
+                                    autoComplete="email"
+                                    autoFocus
+                                />
+                                <TextField
+                                    margin="normal"
+                                    required
+                                    fullWidth
+                                    name="password"
+                                    label="Password"
+                                    type="password"
+                                    id="password"
+                                    autoComplete="current-password"
+                                />
+                                <Button
+                                    type="submit"
+                                    fullWidth
+                                    variant="contained"
+                                    sx={{ mt: 3, mb: 2 }}
+                                >
+                                    Sign In
+                                </Button>
+                            </Box>
+                        </Box>
+                    </Container>
+                </ThemeProvider>
+            </div>
+        </div>
+    );
+}

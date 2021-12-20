@@ -27,7 +27,7 @@ const SideBar = ({ setView }) => {
                 {/* <Typography variant="h5" > /</Typography> */}
                 <Chip label="Users"  onClick={() => handleClick("Users")} />
                 <Chip label="Reports"  onClick={() => handleClick("Reports")} />
-
+                <Chip label="Borrow"  onClick={() => handleClick("Borrow")} />
             </Stack>
             </div>
         </div>
