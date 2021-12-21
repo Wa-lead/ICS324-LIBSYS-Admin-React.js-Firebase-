@@ -34,7 +34,8 @@ const UpdateBook = ({ book, setSelectedImg }) => {
             pub_date.current.value,
             rack_num.current.value,
             author.current.value,
-            copies.current.value
+            copies.current.value,
+            book.copies,
         );
 
         setSelectedImg(null);

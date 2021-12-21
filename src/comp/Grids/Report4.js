@@ -25,14 +25,16 @@ const Report4 = ({ User }) => {
     return (
         <div>
             <div className="Stack">
-                <Typography variant="h2" sx={{ mb: 3, mt: 3, fontWeight: 900 }}> Users who books one day before due </Typography>
+                <Typography variant="h2" sx={{ mb: 3, mt: 3, fontWeight: 900 }}> Users who return at least 1 day before </Typography>
                 {docs && docs.map(doc => (
                     <div className="userCard">
                         <PersonIcon />
+                        <p>{doc.Fname}</p>
                         <p>{doc.Lname}</p>
                         <p>{doc.SSN}</p>
-                        <p>Duration: {doc.durationOfBorrow}</p>
-                        <p>ISBN: {doc.bookISBN}</p>
+                        <p>{doc.Department}</p>
+                        <p>{doc.Role}</p>
+                        < p style={{color: 'orange'}}>Count: {doc.num}</p>
                     </div>
                 ))}
             </div>

@@ -43,6 +43,7 @@ const useReport33 = (Collection) => {
                     o.push(document.data());
                 });
                 if(o.length>= 3){
+                    documentOfUsers[i].Borrows = o.length;
                     arrayOfusers.push(documentOfUsers[i]);
                 }
             }

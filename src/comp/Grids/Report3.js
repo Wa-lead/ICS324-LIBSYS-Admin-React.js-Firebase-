@@ -31,7 +31,7 @@ const Report3 = ({ User }) => {
                         <p>{doc.SSN}</p>
                         <p>{doc.Department}</p>
                         <p>{doc.Role}</p>
-                        <p>{doc.Birthdate}</p>
+                        <p style={{color: 'blue'}} > Borrows: {doc.Borrows}</p>
                     </div>
                 ))}
             </div>

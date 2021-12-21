@@ -24,6 +24,7 @@ const useUploadUser = (User) => {
         setDoc(docRef, {
             SSN: User.SSN,
             Password: User.Password,
+            Email: User.Email,
             Fname: User.Fname,
             Minit:User.Minit,
             Lname: User.Lname,

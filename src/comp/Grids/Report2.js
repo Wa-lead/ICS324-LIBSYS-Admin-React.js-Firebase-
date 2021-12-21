@@ -34,7 +34,7 @@ const Report2 = ({ User }) => {
                         <p>{doc.Department}</p>
                         <p>{doc.Role}</p>
                         <p>{doc.Birthdate}</p>
-                        <p>{doc.penality? doc.penality : "0"}</p>
+                        <p style={{color: 'red'}} >Penality: {doc.penality? doc.penality : "0"}</p>
                     </div>
                 ))}
             </div>
