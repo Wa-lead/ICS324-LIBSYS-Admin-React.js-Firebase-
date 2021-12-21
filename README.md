@@ -11,7 +11,7 @@ How to run:
 React.js & Firebase Admin page:
 1- addbook - modify - delete
 ![Untitled ![Untitled (2)](https://user-images.githubusercontent.com/81301826/146920415-15cd4cf1-5676-4d69-bc94-871858d7aa57.png)
-(1)](https://user-images.githubusercontent.com/81301826/146920406-5c61349e-368d-4d5c-9742-b89884586d34.png)
+![Untitled (2)](https://user-images.githubusercontent.com/81301826/146921989-5caf1987-1851-4152-92d3-025c4dbe69db.png)
 2- adduser - delete user
 ![Untitled (3)](https://user-images.githubusercontent.com/81301826/146920447-e3e4c9d1-2346-41d2-b8e8-255b9a9ed6bc.png)
 3-Borrow Book!
