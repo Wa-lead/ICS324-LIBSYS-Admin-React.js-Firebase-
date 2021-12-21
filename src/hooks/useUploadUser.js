@@ -1,34 +1,30 @@
 import {
-    useState,
     useEffect
 } from 'react';
 import {
-    projectStorage,
     projectFirestore,
 } from '../firebase/config';
-import {
-    getDownloadURL,
-    ref,
-    uploadBytesResumable
-} from "firebase/storage";
+
 import {
     collection,
     serverTimestamp,
-    addDoc,
+    setDoc,
+    doc
 } from 'firebase/firestore';
 
 
 
 const useUploadUser = (User) => {
     
-    console.log("ddfs")
-
     useEffect(() => {
         // refreneces
         const collectionRef = collection(projectFirestore, 'User');
 
-        addDoc(collectionRef, {
+        const docRef = doc(collectionRef , String(User.SSN))
+        setDoc(docRef, {
             SSN: User.SSN,
+            Password: User.Password,
+            Email: User.Email,
             Fname: User.Fname,
             Minit:User.Minit,
             Lname: User.Lname,

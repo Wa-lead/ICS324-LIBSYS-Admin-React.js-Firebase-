@@ -21,6 +21,8 @@ const UploadUser = () => {
     const Birthdate = useRef(null);
     const Department = useRef(null);
     const Role = useRef(null);
+    const Password = useRef(null);
+    const Email = useRef(null);
 
 
 
@@ -36,7 +38,9 @@ const UploadUser = () => {
             Lname.current.value,
             Birthdate.current.value,
             Department.current.value,
-            Role.current.value
+            Role.current.value,
+            Password.current.value,
+            Email.current.value
         ));
 
 
@@ -46,7 +50,9 @@ const UploadUser = () => {
         <div className="uploadForm">
             <Typography variant="h2" sx={{ mb:3, mt: 3, fontWeight: 900 }}> Fill the required fields </Typography>
             SSN:<input type="text" ref={SSN} />
+            Email:<input type="text" ref={Email} />
             {/* <div className="flexBox"> */}
+            Password: <input type="password" ref={Password} />
             Fname: <input type="text" ref={Fname} />
             Minit: <input type="text" ref={Minit} />
             Lname: <input type="text" ref={Lname} />
