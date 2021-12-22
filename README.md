@@ -4,7 +4,7 @@
 
 # How to run: 
 1. clone the project: https://github.com/Wa-lead/ICS324-LIBSYS-Admin-React.js-Firebase-.git
-2. in the terminal run: npm intall 
+2. in the terminal run: npm install 
 3. wait until all dependencies have been downloaded
 4. in the terminal run: npm start
 5. web page will appear which is the librarian view
